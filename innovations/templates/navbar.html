@@ -1,0 +1,43 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-light shadow-lg position-sticky">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
+            <img src="/static/images/icons/weblogo.png" class="logo img-fluid" alt="Kirimara coffee">
+            <span style="font-size: small;">
+                WEBSIGHT INNOVATIONS
+                <!-- <small>For Quality Coffee</small> -->
+            </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+                    <a class="nav-link click-scroll" href="{% url 'homepage' %}">Home</a>
+                </li>
+
+                <li class="nav-item {% if request.path == '/about/' %}active{% endif %}">
+                    <a class="nav-link click-scroll" href="{% url 'about' %}">About Us</a>
+                </li>
+
+                <li class="nav-item {% if request.path == '/services/' %}active{% endif %}">
+                    <a class="nav-link click-scroll" href="{% url 'services' %}">Our Services</a>
+                </li>
+                <li class="nav-item {% if request.path == '/services/' %}active{% endif %}">
+                    <a class="nav-link click-scroll" href="{% url 'products' %}">Our Products</a>
+                </li>
+                <li class="nav-item {% if request.path == '/gallery/' %}active{% endif %}">
+                    <a class="nav-link click-scroll" href="{% url 'gallery' %}">Our Gallery</a>
+                </li>
+
+                <li class="nav-item {% if request.path == '/contact/' %}active{% endif %}">
+                    <a class="nav-link click-scroll" href="{% url 'contact' %}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->

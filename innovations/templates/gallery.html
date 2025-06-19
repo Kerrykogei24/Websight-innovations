@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section class="section-padding" id="section_3">
+    <div class="container">
+
+
+
+        <div class="col-lg-12 col-12 text-center mb-4">
+            <h5 class="mb-3 text-center">Websight Innovations Gallery</h5>
+        </div>
+
+        <p  class="text-center">Welcome to the Websight Innovations Gallery — a visual showcase of our work, impact, and growth. Here, you’ll find snapshots of the projects we’ve proudly delivered across web development, networking, CCTV installations, intercom systems, and tech product setups. From dynamic websites and server rooms to on-site installations and product demos, our gallery reflects the passion, precision, and professionalism that define our brand.</p>
+
+
+        <div class="container-fluid bg-danger mb-2 wow fadeIn" data-wow-delay="0.1s" style="padding: 2px">
+            <div class="container">
+              <div class="row g-2">
+                <div class="col-md-10">
+                  <div class="row g-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br><br>
+
+
+          <div class="row">
+           
+            {% for image in images %}
+            
+            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                <div class="custom-block-wrap">
+                    <a href="" class="custom-block-image img-fluid">                  
+                        <img src="{{ image.image.url }}" class="custom-block-image img-fluid equal-size" alt="{{ image.title }}">
+                    </a>
+
+                 
+                       
+                    </div>
+                   
+                </div>
+                
+            </div>
+           
+            {% endfor %}
+    </div> <!-- Close the row here -->
+
+
+
+
+
+
+      
+
+    
+</section>
+
+ {% endblock %}

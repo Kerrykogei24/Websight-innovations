@@ -1,0 +1,149 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="contact-section section-padding" id="section_6">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-12 ms-auto mb-4 mb-lg-0">
+                <div class="contact-info-wrap">
+                    <h2>Get in touch</h2>
+
+                    <div class="contact-image-wrap d-flex flex-wrap">
+                        <img src="/static/images/kerry/ceo1.jpg" class="img-fluid avatar-image" alt="">
+
+                        <div class="d-flex flex-column justify-content-center ms-3">
+                            <p class="mb-0">Kerry Kogei</p>
+                            <p class="mb-0"><strong>Managing Director</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <h5 class="mb-3">Contact Infomation</h5>
+
+                        <p class="d-flex mb-2">
+                            <i class="bi-geo-alt me-2"></i>
+                           Nairobi,Kenya
+                        </p>
+
+                        <p class="d-flex mb-2">
+                            <i class="bi-telephone me-2"></i>
+
+                            <a href="tel: 0723424164">
+                                0723-424-164
+                            </a>
+                        </p>
+
+                        <p class="d-flex">
+                            <i class="bi-envelope me-2"></i>
+
+                            <a href="mailto:websightinno@gmail.com">
+                                websightinno@gmail.com
+                            </a>
+                        </p>
+
+                        <a href="https://maps.app.goo.gl/fNfptxqN8LitqRbT8" class="custom-btn btn mt-3" target="_blank">Get Direction</a>
+                    </div>
+
+                 
+
+            
+                </div>
+            </div>
+
+
+
+            
+
+            <div class="col-lg-5 col-12 mx-auto">
+
+
+
+
+    {% load widget_tweaks %}
+<br><br>
+<form method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+    <h2>Contact form</h2>
+
+    <p class="mb-4">Send A Message:
+        <a href="mailto:websightinno@gmail.com">websightinno@gmail.com</a>
+    </p>
+
+    
+        
+    {{ form.name|add_class:"form-control" }}
+       <br>
+    
+    
+    {{ form.phone|add_class:"form-control" }}
+    <br>
+    {{ form.email|add_class:"form-control" }}
+    <br>
+    {{ form.subject|add_class:"form-control" }}
+    <br>
+    {{ form.message|add_class:"form-control" }}
+    <br>
+
+    <button type="submit" class="form-control">Send Message</button>
+</form>
+
+                
+                
+            </div>
+
+        </div>
+    </div>
+</section>
+<div class="container-fluid bg-danger mb-2 wow fadeIn" data-wow-delay="0.1s" style="padding: 2px">
+    <div class="container">
+      <div class="row g-2">
+        <div class="col-md-10">
+          <div class="row g-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<section >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-12 ms-auto mb-5 mb-lg-0">
+            
+            </div>
+
+            <div class="col-lg-8 col-12 ms-auto mb-5 mb-lg-0">
+                <div class="contact-info-wrap">
+                    <h5 class="text-center mb-3">Websight Innovations On Map</h5>
+
+               
+
+      
+
+                 
+
+                    <div class="contact-info">
+
+                        <div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8205794225087!2d36.96532112537841!3d-1.2813831629676853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f6d9f69851e7d%3A0x7c5414495f519d84!2sWebsight%20Innovations!5e0!3m2!1sen!2ske!4v1749895552182!5m2!1sen!2ske" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        
+
+                     
+
+
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-12 ms-auto mb-5 mb-lg-0">
+            
+            </div>
+
+
+            
+
+        
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

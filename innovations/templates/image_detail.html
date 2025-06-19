@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+
+
+    <section class="section-padding" id="section_3">
+        <div class="container">
+            <div class="col-lg-12 col-12 text-center mb-4">
+                <h5 class="mb-3">{{ image.title}}</h5>
+               
+                <p>{{image.detail}}</p>
+            </div>
+    
+            <!-- Start the row for the images here -->
+            <p class="col-lg-12 col-12 text-center mb-4"> <strong> Let Websight Innovations be your digital partner in a connected world.</strong></p>
+            
+            <div class="container-fluid bg-danger mb-2 wow fadeIn" data-wow-delay="0.1s" style="padding: 2px">
+                <div class="container">
+                  <div class="row g-2">
+                    <div class="col-md-10">
+                      <div class="row g-2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="row">
+               
+                {% for detail in image.details.all %}
+
+               
+                
+                <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block-wrap">
+                        
+                        <img src="{{detail.detail_image.url}}" class="custom-block-image img-fluid equal-size" alt="{{ detail.title  }}">
+
+    
+                       
+                    </div>
+                    <br><br><br>
+                </div>
+                
+               
+                {% endfor %}
+            </div> <!-- Close the row here -->
+            <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                <a class="nav-link custom-btn custom-border-btn btn" href="{% url 'services' %}">Back</a>
+            </div>
+         
+       
+            <br><br><br>
+        </div>
+    </section>
+    
+    <style>
+        .equal-size {
+            width: 100%; /* Ensure the images take full width of the column */
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Ensures images cover the area without distorting their aspect ratio */
+        }
+    </style>
+
+
+    {% endblock %}

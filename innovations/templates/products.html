@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% load humanize %} {% load static %} {% block content %}
+ 
+
+<div class="container">
+    <div class="row">
+
+       
+
+        <div class="col-lg-12 col-12">
+          
+            
+            <div class="row">
+
+               
+                <div class="col-lg-12 col-md-6 col-12">
+                    <div class="custom-text-box mb-lg-0 text-center">
+                        <h5 class="mb-3 text-center">Our Products</h5>
+
+                    
+                            <p class="text-center"><strong>Websight Innovations</strong>, we don't just provide services — we also stock a wide range of quality tech products to keep you connected, powered, and up-to-date. Whether you're upgrading your setup or looking for reliable accessories, we've got you covered with carefully selected, affordable items.</p>
+
+
+
+                        
+          
+                    </div>
+                </div>
+        
+            </div>
+
+
+            
+
+
+
+            
+        </div>
+
+    </div>
+    <div class="container-fluid bg-danger mb-2 wow fadeIn" data-wow-delay="0.1s" style="padding: 2px">
+        <div class="container">
+          <div class="row g-2">
+            <div class="col-md-10">
+              <div class="row g-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        {% load humanize %}
+        {% for product in products %}
+        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+            <div class="custom-block-wrap">
+                <div class="custom-block">
+                    <div class="custom-block-body">
+                        <a href="" class="custom-block-image img-fluid">                  
+                            <img src="{{ product.image.url }}" class="custom-block-image img-fluid equal-size" alt="{{ product.title }}">
+                        </a>
+                        <h5 class="mb-3">{{ product.title }}</h5>
+                        <p><strong>{{ product.description }}</strong></p>
+    
+                        <a 
+                          href="https://wa.me/254723424164?text=I'm%20interested%20in%20{{ product.title|urlencode }}%20(KSH%20{{ product.price|floatformat:2|intcomma }})" 
+                          class="btn btn-warning" 
+                          target="_blank">
+                          Buy Now
+                        </a>
+    
+                        <button type="button" class="btn btn-warning">
+                            KSH {{ product.price|floatformat:2|intcomma }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+        <a class="nav-link custom-btn custom-border-btn btn" href="{% url 'services' %}">Back</a>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

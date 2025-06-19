@@ -1,0 +1,3 @@
+Thank you for reaching out, {{ name }}!
+
+We’ve received your message at Websight Innovations and truly appreciate you getting in touch. Our team will review your inquiry and respond to you as soon as possible. We look forward to assisting you!
